@@ -1,7 +1,6 @@
 $(document).ready(function() {
   window.dancers = [];
 
-
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
@@ -31,7 +30,23 @@ $(document).ready(function() {
 
     $('body').append(dancer.$node);
     window.dancers.push(dancer);
-    console.log(window.dancers);
+
+    for (var i = 1; i < window.dancers.length; i++) {
+      if (window.dancers.length > 1) {
+        var firstDancer = window.dancers[0];
+        var otherDancer = window.dancers[i];
+        var kiss = function(otherDancer) {
+          var preTop = otherDancer.top;
+          var preLeft = otherDancer.left;
+          otherDancer.setPosition (firstDancer.top, firstDancer.left + 20);
+          setTimeout(function() {
+            otherDancer.setPosition (preTop, preLeft);
+          }, 1000);
+        };
+
+        kiss(otherDancer);
+      }
+    }
   });
 
   $('.lineUpButton').on('click', function(event) {
@@ -42,4 +57,7 @@ $(document).ready(function() {
       leftPosition += 100;
     }
   });
+
+
+
 });
