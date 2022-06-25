@@ -23,3 +23,9 @@ HeartDancer.prototype.setPosition = function(top, left) {
 
   this.$node.css(styleSettings);
 };
+
+HeartDancer.prototype.lineUp = function(left) {
+  this.top = 50;
+  this.left = left;
+  this.setPosition(this.top, this.left);
+};

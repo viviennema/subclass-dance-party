@@ -20,6 +20,7 @@ Dancer.prototype.step = function() {
   var currentContext = this;
   setTimeout(function() { currentContext.step(); }, this.timeBetweenSteps);
 
+
 };
 
 
@@ -33,4 +34,10 @@ Dancer.prototype.setPosition = function(top, left) {
   };
   this.$node.css(styleSettings);
 
+};
+
+Dancer.prototype.lineUp = function(left) {
+  this.top = 50;
+  this.left = left;
+  this.setPosition(this.top, this.left);
 };
