@@ -11,11 +11,12 @@ body, a:link, a:visited, a:active{
 }
 .title, .addDancerButton{
   padding:5px 12px;
-  float:right;
+  float: right;
 }
 .topbar{
   height:32px;
   background-color: #555;
+  display: inline;
 }
 .title{
   background-color: #777;
@@ -24,4 +25,38 @@ body, a:link, a:visited, a:active{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+}
+
+.square{
+  border:10px solid rgb(255, 208, 0);
+  height:10px;
+  width:10px;
+  background-color: aqua;
+  position:absolute;
+}
+
+.heart{
+  width:30px;
+  position: absolute;
+  -webkit-mask:
+     radial-gradient(circle at 60% 65%, red 64%, transparent 65%) top left,
+     radial-gradient(circle at 40% 65%, red 64%, transparent 65%) top right,
+     linear-gradient(to bottom left, red 43%,transparent 43%) bottom left ,
+     linear-gradient(to bottom right,red 43%,transparent 43%) bottom right;
+
+  -webkit-mask-size:50% 50%;
+  -webkit-mask-repeat:no-repeat;
+  mask:
+     radial-gradient(circle at 60% 65%, red 64%, transparent 65%) top left,
+     radial-gradient(circle at 40% 65%, red 64%, transparent 65%) top right,
+     linear-gradient(to bottom left, red 43%,transparent 43%) bottom left ,
+     linear-gradient(to bottom right,red 43%,transparent 43%) bottom right;
+  mask-size:50% 50%;
+  mask-repeat:no-repeat;
+  background:linear-gradient(red,rgb(0, 153, 255),yellow,rgb(255, 81, 0),rgb(246, 192, 255));
+}
+.heart::before {
+  content:"";
+  display:block;
+  padding-top:100%;
 }
