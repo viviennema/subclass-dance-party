@@ -9,7 +9,7 @@ HeartDancer.prototype.constructor = HeartDancer;
 
 HeartDancer.prototype.step = function() {
   Dancer.prototype.step.call(this);
-  this.$node.toggle();
+  this.$node.toggleClass("big");
 };
 
 HeartDancer.prototype.setPosition = function(top, left) {
@@ -20,6 +20,6 @@ HeartDancer.prototype.setPosition = function(top, left) {
     top: top,
     left: left
   };
-  this.$node.css(styleSettings);
 
+  this.$node.css(styleSettings);
 };

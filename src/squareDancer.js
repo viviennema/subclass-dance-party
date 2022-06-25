@@ -8,8 +8,9 @@ SquareDancer.prototype = Object.create(Dancer.prototype);
 SquareDancer.prototype.constructor = SquareDancer;
 
 SquareDancer.prototype.step = function() {
+  this.top = (this.top + 10) % $("body").height();
   Dancer.prototype.step.call(this);
-  this.$node.toggle();
+  this.setPosition(this.top, this.left);
 };
 
 SquareDancer.prototype.setPosition = function(top, left) {

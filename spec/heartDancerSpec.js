@@ -13,9 +13,9 @@ describe('heartDancer', function() {
   });
 
   it('should have a step function that makes its node blink', function() {
-    sinon.spy(heartDancer.$node, 'toggle');
+    sinon.spy(heartDancer.$node, 'toggleClass');
     heartDancer.step();
-    expect(heartDancer.$node.toggle.called).to.be.true;
+    expect(heartDancer.$node.toggleClass.called).to.be.true;
   });
 
   describe('dance', function() {
