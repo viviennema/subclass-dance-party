@@ -1,6 +1,13 @@
 $(document).ready(function() {
   window.dancers = [];
 
+  var mouseoverFunc = function() {
+    $(this).css('border-color', 'black');
+  };
+  var mouseoutFunc = function() {
+    $(this).css('border-color', 'red');
+  };
+
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
@@ -23,12 +30,14 @@ $(document).ready(function() {
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+      $('body').height() * Math.random(),
+      $('body').width() * Math.random(),
       Math.random() * 1000
     );
 
     $('body').append(dancer.$node);
+    dancer.$node.mouseout(mouseoutFunc);
+    dancer.$node.mouseover(mouseoverFunc);
     window.dancers.push(dancer);
 
     for (var i = 1; i < window.dancers.length; i++) {
@@ -57,6 +66,8 @@ $(document).ready(function() {
       leftPosition += 100;
     }
   });
+
+
 
 
 

@@ -2,6 +2,7 @@ var SquareDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps);
   this.$node = $('<span class="square"></span>');
   this.setPosition(top, left);
+  this.interaction();
 };
 
 SquareDancer.prototype = Object.create(Dancer.prototype);
@@ -23,4 +24,15 @@ SquareDancer.prototype.setPosition = function(top, left) {
   };
 
   this.$node.css(styleSettings);
+
+};
+
+SquareDancer.prototype.interaction = function() {
+  $('.square').mouseover(function() {
+    $('.square').css('border', 'black');
+  });
+  $('.square').mouseout(function() {
+    $('.square').css('border', 'yellow');
+  });
+
 };

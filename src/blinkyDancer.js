@@ -7,6 +7,7 @@ var BlinkyDancer = function(top, left, timeBetweenSteps) {
 
   //this.oldStep = this.step;
 
+
 };
 
 BlinkyDancer.prototype = Object.create(Dancer.prototype);
@@ -28,3 +29,4 @@ BlinkyDancer.prototype.lineUp = function(left) {
   this.left = left;
   this.setPosition(this.top, this.left);
 };
+
