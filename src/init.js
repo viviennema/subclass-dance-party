@@ -2,7 +2,7 @@ $(document).ready(function() {
   window.dancers = [];
 
   var mouseoverFunc = function() {
-    $(this).css('border-color', 'black');
+    $(this).css('border-color', 'lightblue');
   };
   var mouseoutFunc = function() {
     $(this).css('border-color', 'red');
