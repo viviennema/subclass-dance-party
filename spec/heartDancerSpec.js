@@ -34,4 +34,12 @@ describe('heartDancer', function() {
       expect(heartDancer.step.callCount).to.be.equal(2);
     });
   });
+
+  describe('lineUp', function() {
+    it('should have a lineUp function that makes its top 50', function() {
+      heartDancer.lineUp();
+      console.log(heartDancer.lineUp);
+      expect(heartDancer.top).to.be.equal(50);
+    });
+  });
 });

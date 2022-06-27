@@ -34,4 +34,11 @@ describe('blinkyDancer', function() {
       expect(blinkyDancer.step.callCount).to.be.equal(2);
     });
   });
+  describe('lineUp', function() {
+    it('should have a lineUp function that makes its top 50', function() {
+      blinkyDancer.lineUp();
+      console.log(blinkyDancer.lineUp);
+      expect(blinkyDancer.top).to.be.equal(50);
+    });
+  });
 });
